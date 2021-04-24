@@ -5,3 +5,26 @@ docker build --progress=plain -t scolr
 Create the container with:
 
 docker run -p 8080:8080 -v /data/folder/on/host:/opt/pharo/data -t scolr
+
+
+Create the image with:
+
+```
+docker build --progress=plain -t scolr .  
+```
+
+Run the container with: 
+```
+docker run -d -p 8080:8080 -v /data/folder/on/host:/opt/pharo/data scolr
+```
+
+If you waht it to restart on failure on or host restart, run the container with: 
+```
+docker run -d  --restart unless-stopped -p 8080:8080 -v /data/folder/on/host:/opt/pharo/data scolr
+```
+
+# About the data folder
+
+In the data folder you will find a reviewnator-config.fuel file, and a reviewnator folder where projects are stored as individual json files.
+
+If missing, the reviewnator-config.fuel file, and the reviewnator folder will be created.
