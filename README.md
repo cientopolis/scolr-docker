@@ -10,7 +10,7 @@ docker run -p 8080:8080 -v /data/folder/on/host:/opt/pharo/data -t scolr
 Create the image with:
 
 ```
-docker build --progress=plain -t scolr .  
+docker build --no-cache --progress=plain -t scolr .  
 ```
 
 Run the container with: 
