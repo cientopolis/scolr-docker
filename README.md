@@ -17,6 +17,6 @@ docker run -d  --restart unless-stopped -p 8080:8080 -v /data/folder/on/host:/op
 
 # About the data folder
 
-In the data folder you will find a reviewnator-config.fuel file, and a reviewnator folder where projects are stored as individual json files.
+In the data folder you will find a reviewnator-config.json file, and a reviewnator folder where projects are stored as individual json files.
 
-If missing, the reviewnator-config.fuel file, and the reviewnator folder will be created.
+If missing, the reviewnator-config.json file, and the reviewnator folder will be created.
