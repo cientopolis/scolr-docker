@@ -1,4 +1,6 @@
 
+Update run.st with the emails and smtp server
+
 Create the image with:
 
 ```
@@ -14,6 +16,8 @@ If you waht it to restart on failure on or host restart, run the container with:
 ```
 docker run -d  --restart unless-stopped -p 8080:8080 -v /data/folder/on/host:/opt/pharo/data scolr
 ```
+
+If you update run.st you need to rebuild the image.
 
 # About the data folder
 
