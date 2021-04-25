@@ -1,4 +1,4 @@
-FROM basmalltalk/pharo:7.0-image
+FROM basmalltalk/pharo:8.0-image
 EXPOSE 8080
 ADD install.st /opt/pharo
 ADD run.st /opt/pharo
