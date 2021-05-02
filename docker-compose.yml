@@ -1,0 +1,12 @@
+version: "3.9"  
+services:
+  web:
+    build: .
+    image: scolr
+    restart: unless-stopped
+    ports:
+        - "8000:8080"
+    volumes:
+        - type: bind
+          source: ../data
+          target: /opt/pharo/data

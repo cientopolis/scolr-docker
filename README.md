@@ -1,4 +1,12 @@
 
+With docker compose
+
+docker-compose build --no-cache web
+
+docker-compose up -d web
+
+----
+
 Update run.st with the emails and smtp server
 
 Create the image with:
