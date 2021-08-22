@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: scolr
+data:
+  SMTP_SERVER: localhost
+  FROM_EMAIL: email@localhost.com

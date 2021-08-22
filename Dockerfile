@@ -1,8 +1,7 @@
-FROM basmalltalk/pharo:8.0-image
+FROM casco/pharo:8.0
 EXPOSE 8080
 ADD install.st /opt/pharo
 ADD run.st /opt/pharo
-ADD pharo.conf /etc/security/limits.d/pharo.conf
 WORKDIR /opt/pharo
 RUN ["./pharo", "./Pharo.image", "--save", "--quit", "st", "./install.st"]
 RUN mkdir /opt/pharo/data

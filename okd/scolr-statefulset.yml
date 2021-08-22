@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: scolr  
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: scolr
+  serviceName: scolr
+  template:
+    metadata:      
+      labels:
+        app: scolr
+    spec:
+      containers:
+        - image: cientopolis/scolr:1.0.dd4b9cd
+          imagePullPolicy: Always          
+          name: scolr
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          volumeMounts:
+            - mountPath: /opt/pharo/data
+              name: scolr-pvc
+          envFrom:
+            - configMapRef:
+                name: scolr
+  volumeClaimTemplates:
+  - metadata:
+      name: scolr-pvc
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 1Gi
+  restartPolicy: Always
+  updateStrategy:
+    rollingUpdate:
+      partition: 0
+    type: RollingUpdate
+  
